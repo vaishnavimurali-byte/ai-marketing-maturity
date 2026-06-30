@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI marketing maturity assessment</title>
+<style>
+:root{
+  --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#898781;
+  --border:rgba(11,11,11,0.10); --border-strong:rgba(11,11,11,0.16); --border-accent:#378ADD;
+  --surface-1:#f1f0ec; --surface-2:#ffffff; --bg-accent:#E6F1FB; --text-accent:#185FA5;
+  --text-danger:#A32D2D; --radius:8px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#898781;
+    --border:rgba(255,255,255,0.10); --border-strong:rgba(255,255,255,0.16); --border-accent:#85B7EB;
+    --surface-1:#212120; --surface-2:#1a1a19; --bg-accent:#0C447C; --text-accent:#85B7EB;
+    --text-danger:#F09595;
+  }
+  body{background:#101010;}
+}
+*{box-sizing:border-box;}
+body{margin:0;background:#f7f6f3;color:var(--text-primary);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
+.wrap{max-width:720px;margin:0 auto;padding:2.5rem 1.5rem 4rem;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;white-space:nowrap;border:0;}
+fieldset{border:none;padding:0;margin:0 0 1.25rem;}
+button{font:inherit;font-size:14px;padding:10px 16px;border-radius:var(--radius);border:0.5px solid var(--border-strong);background:var(--surface-2);color:var(--text-primary);cursor:pointer;}
+button:hover{background:var(--surface-1);}
+input[type=radio]{accent-color:#2a78d6;}
+a{color:var(--text-accent);}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1 style="font-size:22px;font-weight:500;margin:0 0 8px;">AI marketing maturity assessment</h1>
+<p style="font-size:14px;color:var(--text-secondary);line-height:1.6;margin:0 0 2rem;">10 quick questions across five areas of marketing — strategy, data, content, automation, and measurement. Takes about 3 minutes. See your maturity tier and one concrete next move.</p>
+
+<h2 class="sr-only">Interactive assessment: answer 10 questions across five categories to see your AI marketing maturity score, tier, and a personalized growth recommendation.</h2>
+<div id="quizSection">
+<h3 style="font-size:16px;font-weight:500;color:var(--text-primary);margin:0 0 1rem;">Strategy and leadership buy-in</h3>
+<fieldset>
+<legend style="font-size:14px;font-weight:500;color:var(--text-primary);margin:0 0 8px;">1. How does your organization currently approach AI in marketing?</legend>
+<div style="display:flex;flex-direction:column;gap:6px;">
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q1" value="1" style="margin-top:2px;"><span>No formal plan — AI use is ad hoc or experimental</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q1" value="2" style="margin-top:2px;"><span>A few teams pilot AI tools on their own initiative</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q1" value="3" style="margin-top:2px;"><span>There's a documented AI roadmap, but adoption is uneven</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q1" value="4" style="margin-top:2px;"><span>AI strategy is built into the marketing plan, with leadership sponsorship</span></label>
+</div>
+</fieldset>
+<fieldset>
+<legend style="font-size:14px;font-weight:500;color:var(--text-primary);margin:0 0 8px;">2. How involved is senior leadership in AI-driven marketing decisions?</legend>
+<div style="display:flex;flex-direction:column;gap:6px;">
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q2" value="1" style="margin-top:2px;"><span>Unaware of or skeptical about AI's role in marketing</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q2" value="2" style="margin-top:2px;"><span>Aware, but not actively championing AI initiatives</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q2" value="3" style="margin-top:2px;"><span>Approves AI budgets and pilots when proposed</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q2" value="4" style="margin-top:2px;"><span>Actively sets AI priorities and removes adoption blockers</span></label>
+</div>
+</fieldset>
+<h3 style="font-size:16px;font-weight:500;color:var(--text-primary);margin:1.75rem 0 1rem;padding-top:1.25rem;border-top:0.5px solid var(--border);">Data and customer insights</h3>
+<fieldset>
+<legend style="font-size:14px;font-weight:500;color:var(--text-primary);margin:0 0 8px;">3. How would you describe your customer data setup?</legend>
+<div style="display:flex;flex-direction:column;gap:6px;">
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q3" value="1" style="margin-top:2px;"><span>Scattered across spreadsheets or disconnected tools</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q3" value="2" style="margin-top:2px;"><span>Centralized in a CRM, but rarely analyzed beyond basic reports</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q3" value="3" style="margin-top:2px;"><span>Unified and used for segmentation and targeting</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q3" value="4" style="margin-top:2px;"><span>Feeds real-time, predictive insights across teams</span></label>
+</div>
+</fieldset>
+<fieldset>
+<legend style="font-size:14px;font-weight:500;color:var(--text-primary);margin:0 0 8px;">4. How do you currently generate customer insights?</legend>
+<div style="display:flex;flex-direction:column;gap:6px;">
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q4" value="1" style="margin-top:2px;"><span>Gut feel and anecdotal feedback</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q4" value="2" style="margin-top:2px;"><span>Periodic manual reports or surveys</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q4" value="3" style="margin-top:2px;"><span>Dashboards with some automated analysis</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q4" value="4" style="margin-top:2px;"><span>AI models forecasting behavior, churn, or lifetime value</span></label>
+</div>
+</fieldset>
+<h3 style="font-size:16px;font-weight:500;color:var(--text-primary);margin:1.75rem 0 1rem;padding-top:1.25rem;border-top:0.5px solid var(--border);">Content and personalization</h3>
+<fieldset>
+<legend style="font-size:14px;font-weight:500;color:var(--text-primary);margin:0 0 8px;">5. How is content created in your marketing function?</legend>
+<div style="display:flex;flex-direction:column;gap:6px;">
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q5" value="1" style="margin-top:2px;"><span>Entirely manual, one-size-fits-all</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q5" value="2" style="margin-top:2px;"><span>Some AI tools used occasionally for drafting or ideation</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q5" value="3" style="margin-top:2px;"><span>GenAI is a regular part of the content workflow</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q5" value="4" style="margin-top:2px;"><span>GenAI is embedded in workflows with brand-trained prompts or models</span></label>
+</div>
+</fieldset>
+<fieldset>
+<legend style="font-size:14px;font-weight:500;color:var(--text-primary);margin:0 0 8px;">6. How personalized is the experience you deliver to customers?</legend>
+<div style="display:flex;flex-direction:column;gap:6px;">
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q6" value="1" style="margin-top:2px;"><span>Same message to everyone</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q6" value="2" style="margin-top:2px;"><span>Basic segmentation, e.g. by region or industry</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q6" value="3" style="margin-top:2px;"><span>Behavior-based personalization in email or web</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q6" value="4" style="margin-top:2px;"><span>Real-time, AI-driven 1:1 personalization across channels</span></label>
+</div>
+</fieldset>
+<h3 style="font-size:16px;font-weight:500;color:var(--text-primary);margin:1.75rem 0 1rem;padding-top:1.25rem;border-top:0.5px solid var(--border);">Automation and martech stack</h3>
+<fieldset>
+<legend style="font-size:14px;font-weight:500;color:var(--text-primary);margin:0 0 8px;">7. How would you describe your martech stack?</legend>
+<div style="display:flex;flex-direction:column;gap:6px;">
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q7" value="1" style="margin-top:2px;"><span>Minimal tools — mostly manual processes</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q7" value="2" style="margin-top:2px;"><span>A few point solutions that don't talk to each other</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q7" value="3" style="margin-top:2px;"><span>A connected stack with some integration between tools</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q7" value="4" style="margin-top:2px;"><span>A fully integrated, AI-enhanced stack with automated workflows</span></label>
+</div>
+</fieldset>
+<fieldset>
+<legend style="font-size:14px;font-weight:500;color:var(--text-primary);margin:0 0 8px;">8. How much of your campaign execution is automated?</legend>
+<div style="display:flex;flex-direction:column;gap:6px;">
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q8" value="1" style="margin-top:2px;"><span>Almost none — campaigns are launched manually each time</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q8" value="2" style="margin-top:2px;"><span>Basic automation, e.g. scheduled emails</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q8" value="3" style="margin-top:2px;"><span>Trigger-based automation across multiple channels</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q8" value="4" style="margin-top:2px;"><span>AI optimizes timing, channel, and content automatically</span></label>
+</div>
+</fieldset>
+<h3 style="font-size:16px;font-weight:500;color:var(--text-primary);margin:1.75rem 0 1rem;padding-top:1.25rem;border-top:0.5px solid var(--border);">Measurement and ROI</h3>
+<fieldset>
+<legend style="font-size:14px;font-weight:500;color:var(--text-primary);margin:0 0 8px;">9. How do you measure marketing performance?</legend>
+<div style="display:flex;flex-direction:column;gap:6px;">
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q9" value="1" style="margin-top:2px;"><span>Vanity metrics, e.g. likes or impressions, with no clear ROI link</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q9" value="2" style="margin-top:2px;"><span>Channel-level metrics reviewed periodically</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q9" value="3" style="margin-top:2px;"><span>Multi-touch attribution connecting spend to revenue</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q9" value="4" style="margin-top:2px;"><span>AI-driven attribution and forecasting inform budget in real time</span></label>
+</div>
+</fieldset>
+<fieldset>
+<legend style="font-size:14px;font-weight:500;color:var(--text-primary);margin:0 0 8px;">10. How confident are you in proving marketing's contribution to revenue?</legend>
+<div style="display:flex;flex-direction:column;gap:6px;">
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q10" value="1" style="margin-top:2px;"><span>Not confident — it's largely guesswork</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q10" value="2" style="margin-top:2px;"><span>Somewhat confident, but the data is inconsistent</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q10" value="3" style="margin-top:2px;"><span>Fairly confident, with regular reporting</span></label>
+<label style="display:flex;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer;"><input type="radio" name="q10" value="4" style="margin-top:2px;"><span>Highly confident, with predictive models validating impact</span></label>
+</div>
+</fieldset>
+<div id="formNote" style="font-size:13px;color:var(--text-danger);min-height:18px;margin-bottom:8px;"></div>
+<button id="submitBtn" type="button" style="width:100%;background:var(--bg-accent);color:var(--text-accent);border-color:var(--border-accent);">See my results</button>
+</div>
+<div id="results" style="display:none;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:1.5rem;">
+<div style="background:var(--surface-1);border-radius:var(--radius);padding:1rem;">
+<p style="font-size:13px;color:var(--text-secondary);margin:0 0 4px;">Total score</p>
+<p id="scoreOut" style="font-size:24px;font-weight:500;margin:0;">—</p>
+</div>
+<div style="background:var(--surface-1);border-radius:var(--radius);padding:1rem;">
+<p style="font-size:13px;color:var(--text-secondary);margin:0 0 4px;">Maturity tier</p>
+<p id="tierOut" style="font-size:24px;font-weight:500;margin:0;">—</p>
+</div>
+<div style="background:var(--surface-1);border-radius:var(--radius);padding:1rem;">
+<p style="font-size:13px;color:var(--text-secondary);margin:0 0 4px;">Biggest growth area</p>
+<p id="focusOut" style="font-size:24px;font-weight:500;margin:0;">—</p>
+</div>
+</div>
+<div style="position:relative;width:100%;height:300px;margin-bottom:1.5rem;">
+<canvas id="maturityChart" role="img" aria-label="Radar chart of your AI marketing maturity score across five categories">Radar chart showing scores out of 8 in strategy, data and insights, content and GenAI, automation, and measurement.</canvas>
+</div>
+<div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;">
+<p style="font-size:13px;color:var(--text-secondary);margin:0 0 4px;">Your biggest growth area</p>
+<p id="recCategory" style="font-size:15px;font-weight:500;margin:0 0 8px;">—</p>
+<p id="recText" style="font-size:14px;color:var(--text-secondary);line-height:1.6;margin:0;"></p>
+</div>
+<div style="display:flex;gap:8px;">
+<button id="copyBtn" type="button">Copy my results</button>
+<button id="retakeBtn" type="button">Retake assessment</button>
+</div>
+</div>
+
+<p style="font-size:13px;color:var(--text-muted);margin-top:3rem;line-height:1.6;">Share your score on LinkedIn and tag the one area that's holding your team back — that's usually where the best conversation starts.</p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function(){
+var categories=[
+{label:'Strategy and leadership buy-in',short:'Strategy',qs:['q1','q2'],rec:"Get one executive sponsor and a 90-day AI pilot with a measurable KPI attached — don't wait for a full strategy document."},
+{label:'Data and customer insights',short:'Data and insights',qs:['q3','q4'],rec:"Audit where customer data actually lives today, then unify just two sources before buying any new tool."},
+{label:'Content and personalization',short:'Content and GenAI',qs:['q5','q6'],rec:"Pick one repetitive content task — briefs, ad variants, subject lines — and route it through a GenAI tool for 30 days."},
+{label:'Automation and martech stack',short:'Automation',qs:['q7','q8'],rec:"Map how your current tools connect to each other first — most automation gains come from integration, not new purchases."},
+{label:'Measurement and ROI',short:'Measurement',qs:['q9','q10'],rec:"Tie one live campaign to revenue with multi-touch attribution before rolling measurement out stack-wide."}
+];
+var chartInstance;
+document.getElementById('submitBtn').addEventListener('click',function(){
+var allAnswered=true;
+var catScores=categories.map(function(cat){
+var s=0;
+cat.qs.forEach(function(q){
+var el=document.querySelector('input[name="'+q+'"]:checked');
+if(el){s+=parseInt(el.value,10);}else{allAnswered=false;}
+});
+return s;
+});
+if(!allAnswered){
+document.getElementById('formNote').textContent='Answer all 10 questions to see your results.';
+return;
+}
+document.getElementById('formNote').textContent='';
+var total=catScores.reduce(function(a,b){return a+b;},0);
+var tier;
+if(total<=17){tier='AI curious';}
+else if(total<=25){tier='AI adopter';}
+else if(total<=33){tier='AI practitioner';}
+else{tier='AI-driven leader';}
+var minIdx=0;
+catScores.forEach(function(s,i){if(s<catScores[minIdx]){minIdx=i;}});
+var weak=categories[minIdx];
+document.getElementById('scoreOut').textContent=total+'/40';
+document.getElementById('tierOut').textContent=tier;
+document.getElementById('focusOut').textContent=weak.short;
+document.getElementById('recCategory').textContent=weak.label;
+document.getElementById('recText').textContent=weak.rec;
+window.__resultText='My AI marketing maturity score: '+total+'/40 ('+tier+'). Biggest growth area: '+weak.label+'.';
+document.getElementById('quizSection').style.display='none';
+document.getElementById('results').style.display='block';
+var styles=getComputedStyle(document.documentElement);
+var textColor=styles.getPropertyValue('--text-secondary').trim()||'#52514e';
+var gridColor=styles.getPropertyValue('--border').trim()||'rgba(11,11,11,0.1)';
+var ctx=document.getElementById('maturityChart');
+if(chartInstance){chartInstance.destroy();}
+chartInstance=new Chart(ctx,{
+type:'radar',
+data:{labels:categories.map(function(c){return c.short;}),datasets:[{label:'Your score',data:catScores,backgroundColor:'rgba(42,120,214,0.15)',borderColor:'#2a78d6',borderWidth:2,pointBackgroundColor:'#2a78d6',pointRadius:4}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{r:{min:0,max:8,ticks:{stepSize:2,color:textColor,backdropColor:'transparent'},grid:{color:gridColor},angleLines:{color:gridColor},pointLabels:{color:textColor,font:{size:11}}}}}
+});
+});
+document.getElementById('retakeBtn').addEventListener('click',function(){
+document.getElementById('results').style.display='none';
+document.getElementById('quizSection').style.display='block';
+document.querySelectorAll('input[type=radio]:checked').forEach(function(el){el.checked=false;});
+window.scrollTo(0,0);
+});
+document.getElementById('copyBtn').addEventListener('click',function(){
+var btn=document.getElementById('copyBtn');
+var orig=btn.textContent;
+if(navigator.clipboard&&navigator.clipboard.writeText){
+navigator.clipboard.writeText(window.__resultText||'').then(function(){
+btn.textContent='Copied';
+setTimeout(function(){btn.textContent=orig;},1500);
+});
+}
+});
+})();
+</script>
+</body>
+</html>
